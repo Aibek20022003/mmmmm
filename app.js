@@ -1,78 +1,151 @@
-// const search=document.querySelector('search')
-// const input=document.querySelector('input')
-
-// const _baseUrl='https://restcountries.com/v3.1/all'
-// const searchCountry='https://restcountries.com/v3.1/name/'
-
-// function getName(){
-//     fetch(_baseUrl)
-//     .then(response=>response.json())
-//     .then(data=>{
-//         console.log(data);
-//         showC(data)
-//     })
-// }
-// getName()
-// function searchCountry(name){
-//     fetch(searchCountry+name)
-//     .then(response=>response.json())
-//     .then(data=>{
-//         console.log(data);
-//         showName(data)
 
 
-// })
-// }
-// input.onchange=()=>{
-//     searchCountry(input.value)
-// }
 
 
-// function showName(arr){
-//             for (const user of arr) {
-//                 ulTAG.innerHTML+=`
-//  <li>Олконун аты: ${user.name.common}-Борбору: 
-//  ${user.capital}- Калкынын саны: ${user.population}
-//            <img  width='50px'src=
-//            '${user.flags.png}'</>   
-//                 </li>`
-                
-//             }
-//         }
+ 
+ const btns=document.querySelectorAll('button') 
+ const ulTAG=document.querySelector('ul')
+ 
+ 
+ const url='https://api.sampleapis.com/movies/'
+ function getGraphQL(){
+    fetch(url+'GraphQL') 
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
 
-
-const ulTAG=document.querySelector('ul')
-
-const url='https://api.sampleapis.com/simpsons/episodes'
-
-function getsimpsone(name){
-        fetch(url)
-        .then(response=>response.json())
+ 
+ function getactionadventure(){
+        fetch(url+'action-adventure') 
+        .then(res=>res.json())
         .then(data=>{
             console.log(data);
             showName(data)
-    
-    
+        })
+ }
+ function getanimation(){
+    fetch(url+'animation')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
     })
-    }
-    getsimpsone()
-    function showName(arr){
-                    for (const user of arr) {
-                        ulTAG.innerHTML+=`
-         <li> ${user.name} ${user.description} 
-         <img width='50px' src='${user.thumbnailUrl}'</> 
-                        </li>`
-                        
-                    }
-                }
-
-   
+ }
+function getclassic(){
+    fetch(url+'classic')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
     
+}
+function getcomedy(){
+    fetch(url+'comedy')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
+function getdrama(){
+    fetch(url+'drama')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+    
+}
+function gethorror(){
+    fetch(url+'horror')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
+function getfamily(){
+    fetch(url+'family')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
+function getmystery(){
+    fetch(url+'mystery')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
+function getscififantasy(){
+    fetch(url+'scififantasy')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
+function getwestern(){
+    fetch(url+'western')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        showName(data)
+    })
+}
+btns[0].onclick=()=>{
+    getGraphQL()
+   }     
 
-
-
-
-        
+   btns[1].onclick=()=>{
+   getactionadventure()
+   } 
+   btns[2].onclick=()=>{
+    getanimation()
+   }
+   
+   btns[3].onclick=()=>{
+    getclassic()
+   }
+   btns[4].onclick=()=>{
+    getcomedy()
+   }
+   btns[5].onclick=()=>{
+    getdrama()
+   }
+   btns[6].onclick=()=>{
+    gethorror()
+   }
+   btns[7].onclick=()=>{
+    getfamily()
+   }
+   btns[8].onclick=()=>{
+    getmystery()
+   }
+   btns[9].onclick=()=>{
+    getscififantasy()
+   }
+   btns[10].onclick=()=>{
+    getwestern()
+   }
+   
+   function showName(arr){
+ for (const user of arr) {
+         ulTAG.innerHTML+=`
+             <li>  ${user.title}
+             
+                            </li>`
+                            
+                        }
+                    }
+    
         
         
         
